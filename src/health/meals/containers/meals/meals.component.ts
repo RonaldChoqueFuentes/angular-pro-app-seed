@@ -9,7 +9,7 @@ import { Store } from 'store';
     styleUrls: ['meals.component.scss'],
     template: `
         <div>
-            {{melas$ | async | json}}
+            {{meals$ | async | json}}
         </div>
     `
 })
