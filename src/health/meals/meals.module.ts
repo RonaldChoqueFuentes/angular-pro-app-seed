@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+import { MealFormComponent } from './components/meal-form/meal-form.component';
 
 import {MealsComponent} from './containers/meals/meals.component';
 import {MealComponent} from './containers/meal/meal.component';
@@ -24,7 +25,8 @@ export const ROUTES:Routes = [
     ],
     declarations: [
         MealsComponent,
-        MealComponent
+        MealComponent,
+        MealFormComponent
     ]
 })
 export class MealsModule {}
