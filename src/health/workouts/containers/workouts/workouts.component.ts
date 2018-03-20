@@ -32,8 +32,7 @@ import { Workout, WorkoutsService } from '../../../shared/services/workouts/work
         <list-item
           *ngFor="let workout of workouts"
           [item]="workout"
-          (remove) = "removeWorkout($event)"
-          >
+          (remove)="removeWorkout($event)">
         </list-item>
       </div>
       <ng-template #loading>
@@ -64,7 +63,8 @@ export class WorkoutsComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  removeWorkout(event:Workout){
-   this.workoutsService.removeWorkout(event.$key);
+  removeWorkout(event: Workout) {
+    this.workoutsService.removeWorkout(event.$key);
   }
+
 }

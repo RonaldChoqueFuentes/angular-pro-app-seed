@@ -14,8 +14,8 @@ import { AuthService } from '../../../../auth/shared/services/auth/auth.service'
 export interface Workout {
   name: string,
   type: string,
-  strength:any,
-  endurance:any,
+  strength: any,
+  endurance: any,
   timestamp: number,
   $key: string,
   $exists: () => boolean
@@ -24,7 +24,7 @@ export interface Workout {
 @Injectable()
 export class WorkoutsService {
 
-    workouts$: Observable<Workout[]> = this.db.list(`workouts/${this.uid}`)
+  workouts$: Observable<Workout[]> = this.db.list(`workouts/${this.uid}`)
     .do(next => this.store.set('workouts', next));
 
   constructor(
@@ -41,7 +41,7 @@ export class WorkoutsService {
     if (!key) return Observable.of({});
     return this.store.select<Workout[]>('workouts')
       .filter(Boolean)
-      .map(workouts => workouts.find((Workout: Workout) => workouts.$key === key));
+      .map(workouts => workouts.find((workout: Workout) => workout.$key === key));
   }
 
   addWorkout(workout: Workout) {
